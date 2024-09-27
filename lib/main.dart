@@ -8,19 +8,20 @@ import 'package:violencias/screens/protocolo_vbg_y_vsx.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
-  _MyAppState createState() => _MyAppState();
+  MyAppState createState() => MyAppState();
 }
-class _MyAppState extends State<MyApp> {
+class MyAppState extends State<MyApp> {
   int _paginaActual = 0;
 
-  List<Widget> _paginas = [
-    Home(),
-    LineasDeLlamadas(),
-    ProtocoloVbgYVsx(),
-    FormacionVbg(),
-    SolicitudDeAtencionPsicojuridica(),
-
+  final List<Widget> _paginas = [
+    const Home(),
+    const LineasDeLlamadas(),
+    const ProtocoloVbgYVsx(),
+    const FormacionVbg(),
+    const SolicitudDeAtencionPsicojuridica(),
   ];
 
     @override
@@ -34,7 +35,7 @@ class _MyAppState extends State<MyApp> {
         ),
         body: _paginas[_paginaActual],
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: const Color.fromRGBO(255, 190, 26, 1),
+          backgroundColor:Colors.orange,
           onTap: (index){
             setState(() {
               _paginaActual = index;
