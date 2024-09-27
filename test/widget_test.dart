@@ -1,30 +1,34 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:violencias/screens/main.dart';
+import 'package:violencias/main.dart';  // Asegúrate de que este sea el archivo correcto que contiene tu `MyApp`
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
+  testWidgets('Test de navegación con BottomNavigationBar', (WidgetTester tester) async {
+    // Construye la aplicación MyApp y lanza un frame.
     await tester.pumpWidget(MyApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Verifica que la primera pantalla sea la correspondiente a 'Lineas de emergencia'
+    expect(find.text('Lineas de emergencia'), findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+    // Toca el segundo ítem del BottomNavigationBar (LÍNEAS DE EMERGENCIA)
+    await tester.tap(find.text('LÍNEAS DE EMERGENCIA'));
     await tester.pump();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Verifica que la segunda pantalla (FormacionVbg) se haya cargado
+    expect(find.text('Formación VBG'), findsOneWidget);
+
+    // Toca el tercer ítem del BottomNavigationBar (PROTOCOLO VBG Y VSX)
+    await tester.tap(find.text('PROTOCOLO VBG Y VSX'));
+    await tester.pump();
+
+    // Verifica que la tercera pantalla (SolicitudDeAtencionPsicojuridica) se haya cargado
+    expect(find.text('Solicitud de Atención Psicojurídica'), findsOneWidget);
+
+    // Toca el ítem de inicio para volver a la pantalla inicial
+    await tester.tap(find.text('INICIO'));
+    await tester.pump();
+
+    // Verifica que se ha vuelto a la pantalla inicial (LineasDeLlamadas)
+    expect(find.text('Lineas de emergencia'), findsOneWidget);
   });
 }
