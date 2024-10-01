@@ -1,13 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:violencias/screens/lineas_de_llamada.dart';
-import 'package:violencias/screens/protocolo_vbg_y_vsx.dart';
-import 'package:violencias/screens/solicitud_de_atencion_psicojuridica.dart';
-import 'package:violencias/screens/formacion_vbg.dart';
-import 'package:violencias/screens/Etapa1Page.dart';
-import 'package:violencias/screens/Etapa2Page.dart';
-import 'package:violencias/screens/Etapa3Page.dart';
-import 'package:violencias/screens/Etapa4Page.dart';
-import 'package:violencias/screens/Etapa5Page.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});

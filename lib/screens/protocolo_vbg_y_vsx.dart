@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:violencias/screens/Etapa1Page.dart';
-import 'package:violencias/screens/Etapa2Page.dart';
-import 'package:violencias/screens/Etapa3Page.dart';
-import 'package:violencias/screens/Etapa4Page.dart';
-import 'package:violencias/screens/Etapa5Page.dart';
 
 class ProtocoloVbgYVsx extends StatelessWidget {
   @override

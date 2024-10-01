@@ -8,7 +8,7 @@ import 'package:violencias/screens/formacion_vbg.dart';
 import 'package:violencias/screens/home.dart';
 import 'package:violencias/screens/lineas_de_llamada.dart';
 import 'package:violencias/screens/solicitud_de_atencion_psicojuridica.dart';
-import 'package:violencias/screens/protocolo_vbg_y_vsx.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'Material App',
       home: WelcomeScreen(), // Pantalla de bienvenida inicial
       routes: {
+        '/home': (context) => MainScreen(child: Home()),
         '/lineas_de_llamada': (context) => MainScreen(child: LineasDeLlamadas()),
         '/protocolo_vbg_y_vsx': (context) => MainScreen(child: ProtocoloVbgYVsx()),
         '/solicitud_de_atencion_psicojuridica': (context) => MainScreen(child: SolicitudDeAtencionPsicojuridica()),
