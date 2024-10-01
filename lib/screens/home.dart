@@ -3,39 +3,23 @@ import 'package:violencias/screens/lineas_de_llamada.dart';
 import 'package:violencias/screens/protocolo_vbg_y_vsx.dart';
 import 'package:violencias/screens/solicitud_de_atencion_psicojuridica.dart';
 import 'package:violencias/screens/formacion_vbg.dart';
+import 'package:violencias/screens/Etapa1Page.dart';
+import 'package:violencias/screens/Etapa2Page.dart';
+import 'package:violencias/screens/Etapa3Page.dart';
+import 'package:violencias/screens/Etapa4Page.dart';
+import 'package:violencias/screens/Etapa5Page.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: HomePage(),
-      routes: {
-        '/home': (context) => HomePage(), // Cambiado a HomePage
-        '/lineas_de_llamada': (context) => const LineasDeLlamadas(),
-        '/protocolo_vbg_y_vsx': (context) => ProtocoloVbgYVsx(),
-        '/solicitud_de_atencion_psicojuridica': (context) => const SolicitudDeAtencionPsicojuridica(),
-        '/formacion_vbg': (context) => const FormacionVbg(),
-      },
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          width: double.infinity, // Asegura que el contenedor ocupe todo el ancho
-          height: double.infinity, // Asegura que el contenedor ocupe todo el alto
-          color: Color(0xFFFCBE1A), // Color de fondo
+          width: double.infinity,
+          height: double.infinity,
+          color: Color(0xFFFCBE1A),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -140,7 +124,7 @@ class HomePage extends StatelessWidget {
         ),
 
         const SizedBox(height: 10),
-        _buildNavButton(context, 'INICIO', 'assets/icons/Recurso 10.png', '/home'), // No cambia de página
+        _buildNavButton(context, 'INICIO', 'assets/icons/Recurso 10.png', '/home'),
         _buildNavButton(context, 'LÍNEAS DE EMERGENCIA', 'assets/icons/recurso3.png', '/lineas_de_llamada'),
         _buildNavButton(context, 'PROTOCOLO VBG Y VSX.', 'assets/icons/Recurso 4.png', '/protocolo_vbg_y_vsx'),
         _buildNavButton(context, 'ATENCIÓN PSICOJURÍDICA.', 'assets/icons/Recurso 5.png', '/solicitud_de_atencion_psicojuridica'),
@@ -160,11 +144,7 @@ class HomePage extends StatelessWidget {
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         ),
         onPressed: () {
-          if (route == '/home') {
-            // No hace nada, regresa a la misma página
-          } else {
-            Navigator.pushNamed(context, route);
-          }
+          Navigator.pushNamed(context, route);
         },
         child: Row(
           children: [
@@ -188,27 +168,4 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
-}
-
-class ContentPage extends StatelessWidget {
-  final String title;
-
-  const ContentPage({required this.title, Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-        backgroundColor: const Color(0xFF8E24AA),
-      ),
-      body: Center(
-        child: Text('$title'),
-      ),
-    );
-  }
-}
-
-void main() {
-  runApp(const Home());
 }

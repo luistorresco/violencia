@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:violencias/screens/home.dart'; // Asegúrate de importar tu pantalla principal
+import 'package:violencias/screens/home.dart'; 
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -26,18 +26,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/home.png'), // Cambia por tu imagen
+            image: AssetImage('assets/images/home.jpg'), // Cambia por tu imagen
             fit: BoxFit.cover, // Asegúrate de que la imagen cubra toda la pantalla
-          ),
-        ),
-        child: Center(
-          child: Text(
-            'Bienvenido',
-            style: TextStyle(
-              fontSize: 40,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
           ),
         ),
       ),
