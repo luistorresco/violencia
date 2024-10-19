@@ -61,6 +61,7 @@ flutter:
     - assets/images/pretty-serious.jpg
     - assets/images/Mujer2.jpg
     - assets/images/Mujer fondo morado.jpg
+    - assets/images/home.png
   
 
   fonts:
